@@ -1,5 +1,33 @@
 sudo apt update
 sudo apt upgrade
+
 sudo apt install yt-dlp
 sudo apt install python3-pip
+
 sudo python3 -m pip install yt-dlp
+
+git clone https://github.com/ChitturiSaiSuman/Jarvis
+sudo pip3 install discord-webhook
+sudo pip3 install python-nmap
+sudo pip3 install psutil
+sudo pip3 install transmission-rpc
+sudo apt install wireless-tools
+sudo pip3 install discord.py
+sudo apt install nmap
+sudo apt install transmission-daemon
+
+sudo visudo
+suman ALL=(ALL) NOPASSWD: /home/suman/Jarvis/app.py
+sudo nano /etc/systemd/system/jarvis.service
+
+[Unit]
+Description=Jarvis
+After=network.target
+
+[Service]
+ExecStart=sudo /home/suman/Jarvis/app.py
+
+[Install]
+WantedBy=multi-user.target
+
+sudo systemctl enable jarvis.service

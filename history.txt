@@ -31,3 +31,19 @@ ExecStart=sudo /home/suman/Jarvis/app.py
 WantedBy=multi-user.target
 
 sudo systemctl enable jarvis.service
+
+sudo apt install samba
+sudo nano /etc/samba/smb.conf
+
+[Home]
+comment = Home Directory
+path = /home/suman/
+browseable = yes
+read only = no
+guest ok = yes
+create mask = 0777
+directory mask = 0777
+
+sudo smbpasswd -a suman
+sudo service smbd restart
+sudo ufw allow Samba

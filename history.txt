@@ -47,3 +47,5 @@ directory mask = 0777
 sudo smbpasswd -a suman
 sudo service smbd restart
 sudo ufw allow Samba
+
+sudo apt install speedtest-cli
